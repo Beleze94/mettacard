@@ -1,7 +1,10 @@
+import styles from "./svg.module.css";
+
 export default function ChevronRight() {
 	return (
 		<>
 			<svg
+				className={`${styles.svgChevronRight}`}
 				width="25"
 				height="24"
 				viewBox="0 0 25 24"

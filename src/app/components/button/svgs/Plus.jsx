@@ -1,9 +1,12 @@
+import styles from "./svg.module.css";
+
 export default function Plus() {
 	return (
 		<>
 			<svg
-				width="16"
+				className={`${styles.svgPlus}`}
 				height="16"
+				width="16"
 				viewBox="0 0 16 16"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"

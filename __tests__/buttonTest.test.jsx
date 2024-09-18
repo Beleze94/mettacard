@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Button from "../src/app/components/button/Button";
+import Button from "../src/app/components/button";
 
 describe("Componente Button", () => {
 	test("renderiza corretamente com as props fornecidas", () => {
