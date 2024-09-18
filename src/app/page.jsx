@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<div className={styles.page}>
 			<main className={styles.main}>
-				<Button buttonVariant="novoContato" novoContato></Button>
+				<Button novoContato></Button>
 				<Button
 					buttonVariant="filledDisable"
 					buttonText="Botão"

@@ -16,9 +16,9 @@ export default function Button({
 				<a
 					data-testid="button"
 					href={href}
-					className={`${styles.button} ${styles[buttonVariant]}`}
+					className={`${styles.button} ${styles.novoContato}`}
 				>
-					<Plus className={"svg-plus"} />
+					<Plus />
 					<p>Novo contato</p>
 					<ChevronRight />
 				</a>

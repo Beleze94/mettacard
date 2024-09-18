@@ -20,16 +20,15 @@ describe("Componente Button", () => {
 		expect(linkElement).toHaveClass(variant);
 	});
 
-	test("cria o botão especial de Novo Contato", () => {
+	test("cria o botão especial de 'Novo contato'", () => {
 		const href = "/contato";
-		const variant = "novoContato";
 
-		render(<Button href={href} novoContato buttonVariant={variant} />);
+		render(<Button href={href} novoContato />);
 
 		const linkElement = screen.getByTestId("button");
 		expect(linkElement).toBeInTheDocument();
 		expect(linkElement).toHaveTextContent("Novo contato");
-		expect(linkElement).toHaveClass(variant);
+		expect(linkElement).toHaveClass("novoContato");
 	});
 
 	test('aplica as classes "button" corretamente', () => {
