@@ -8,7 +8,7 @@ export default function ChevronRight() {
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<g id="Chevron right" clip-path="url(#clip0_4001_2646)">
+				<g id="Chevron right" clipPath="url(#clip0_4001_2646)">
 					<path
 						id="Vector"
 						d="M10.4998 6L9.08984 7.41L13.6698 12L9.08984 16.59L10.4998 18L16.4998 12L10.4998 6Z"
