@@ -18,6 +18,23 @@ export default function Home() {
 					type="text"
 					placeholder="Seu nome aqui"
 					label="Label"
+					helperText="Helper Text"
+				/>
+				<Input
+					state="error"
+					name="TesteError"
+					type="text"
+					placeholder="Aqui contém um erro"
+					label="Erro"
+					helperText="Algo está errado"
+				/>
+				<Input
+					state="success"
+					name="TesteOkay"
+					type="text"
+					placeholder="Tudo okay"
+					label="Verificado"
+					helperText="Aqui está certo"
 				/>
 				<Button
 					buttonVariant="filledDisable"

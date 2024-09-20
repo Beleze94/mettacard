@@ -17,6 +17,7 @@
 	top: -0.625rem;
 	left: 0.5rem;
 	background: var(--neutralWhite);
+	color: var(--secondary);
 }
 
 .input {
@@ -29,16 +30,49 @@
 	border-radius: 0.25rem;
 }
 
-.default {
+.default .input {
 	border: 1px solid var(--neutral);
 }
 
-.default:focus-within {
-	border: solid 1px green;
+.default:focus-within .input {
+	border: solid 1px var(--secondary);
+	color: var(--secondary);
 }
 
-.input:focus {
-	border: solid green 1px;
+.wrapper:focus-within .helperText {
+	color: var(--secondary);
+}
+
+.error .input {
+	border: 1px solid var(--errorDark);
+}
+
+.error .icon {
+	fill: var(--errorDark);
+}
+
+.error .helperText {
+	color: var(--errorDark);
+}
+
+.error:focus-within .helperText {
+	color: var(--errorDark);
+}
+
+.success .input {
+	border: 1px solid var(--success2);
+}
+
+.success .icon {
+	fill: var(--success2);
+}
+
+.success .helperText {
+	color: var(--success2);
+}
+
+.success:focus-within .helperText {
+	color: var(--success2);
 }
 
 .inputField {
@@ -61,7 +95,6 @@
 }
 
 .helperText {
-	color: #000;
 	font-size: 0.75rem;
 	font-style: normal;
 	font-weight: 400;

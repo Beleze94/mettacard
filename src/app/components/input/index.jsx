@@ -5,12 +5,19 @@ import styles from "./input.module.css";
 import { FaFontAwesome } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-export default function Input({ state, name, type, placeholder, label }) {
+export default function Input({
+	state,
+	name,
+	type,
+	placeholder,
+	label,
+	helperText,
+}) {
 	return (
 		<>
-			<div className={`${styles.wrapper}`}>
-				<div className={`${styles.input} ${styles[state]}`}>
-					<label className={`${styles.label}`} htmlFor="inputMetta">
+			<div className={`${styles.wrapper} ${styles[state]}`}>
+				<div className={`${styles.input} `}>
+					<label className={`${styles.label}`} htmlFor={name}>
 						{label}
 					</label>
 
@@ -18,6 +25,7 @@ export default function Input({ state, name, type, placeholder, label }) {
 						className={`${styles.inputField}`}
 						type={type}
 						name={name}
+						id={name}
 						placeholder={placeholder}
 					/>
 					<IconContext.Provider
@@ -26,7 +34,7 @@ export default function Input({ state, name, type, placeholder, label }) {
 						<FaFontAwesome icon="fa-solid fa-circle-info" />
 					</IconContext.Provider>
 				</div>
-				<p className={`${styles.helperText}`}>Helper Text.</p>
+				<p className={`${styles.helperText}`}>{helperText}</p>
 			</div>
 		</>
 	);
