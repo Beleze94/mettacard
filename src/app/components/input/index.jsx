@@ -15,13 +15,21 @@ export default function Input({
 }) {
 	return (
 		<>
-			<div className={`${styles.wrapper} ${styles[state]}`}>
-				<div className={`${styles.input} `}>
-					<label className={`${styles.label}`} htmlFor={name}>
+			<div
+				data-testid="wrapper"
+				className={`${styles.wrapper} ${styles[state]}`}
+			>
+				<div data-testid="input" className={`${styles.input} `}>
+					<label
+						data-testid="label"
+						className={`${styles.label}`}
+						htmlFor={name}
+					>
 						{label}
 					</label>
 
 					<input
+						data-testid="inputField"
 						className={`${styles.inputField}`}
 						type={type}
 						name={name}
@@ -31,10 +39,15 @@ export default function Input({
 					<IconContext.Provider
 						value={{ className: `${styles.icon}` }}
 					>
-						<FaFontAwesome icon="fa-solid fa-circle-info" />
+						<FaFontAwesome
+							data-testid="icon"
+							icon="fa-solid fa-circle-info"
+						/>
 					</IconContext.Provider>
 				</div>
-				<p className={`${styles.helperText}`}>{helperText}</p>
+				<p data-testid="helperText" className={`${styles.helperText}`}>
+					{helperText}
+				</p>
 			</div>
 		</>
 	);
