@@ -2,8 +2,9 @@
 
 import React from "react";
 import styles from "./input.module.css";
-import { FaFontAwesome } from "react-icons/fa";
 import { IconContext } from "react-icons";
+import { FaCircleCheck } from "react-icons/fa6";
+import { FaInfoCircle } from "react-icons/fa";
 
 export default function Input({
 	state,
@@ -13,42 +14,85 @@ export default function Input({
 	label,
 	helperText,
 }) {
-	return (
-		<>
-			<div
-				data-testid="wrapper"
-				className={`${styles.wrapper} ${styles[state]}`}
-			>
-				<div data-testid="input" className={`${styles.input} `}>
-					<label
-						data-testid="label"
-						className={`${styles.label}`}
-						htmlFor={name}
-					>
-						{label}
-					</label>
+	if (state == "success") {
+		return (
+			<>
+				<div
+					data-testid="wrapper"
+					className={`${styles.wrapper} ${styles[state]}`}
+				>
+					<div data-testid="input" className={`${styles.input} `}>
+						<label
+							data-testid="label"
+							className={`${styles.label}`}
+							htmlFor={name}
+						>
+							{label}
+						</label>
 
-					<input
-						data-testid="inputField"
-						className={`${styles.inputField}`}
-						type={type}
-						name={name}
-						id={name}
-						placeholder={placeholder}
-					/>
-					<IconContext.Provider
-						value={{ className: `${styles.icon}` }}
-					>
-						<FaFontAwesome
-							data-testid="icon"
-							icon="fa-solid fa-circle-info"
+						<input
+							data-testid="inputField"
+							className={`${styles.inputField}`}
+							type={type}
+							name={name}
+							id={name}
+							placeholder={placeholder}
 						/>
-					</IconContext.Provider>
+
+						<IconContext.Provider
+							value={{ className: `${styles.icon}` }}
+						>
+							<FaCircleCheck />
+						</IconContext.Provider>
+					</div>
+					<p
+						data-testid="helperText"
+						className={`${styles.helperText}`}
+					>
+						{helperText}
+					</p>
 				</div>
-				<p data-testid="helperText" className={`${styles.helperText}`}>
-					{helperText}
-				</p>
-			</div>
-		</>
-	);
+			</>
+		);
+	} else {
+		return (
+			<>
+				<div
+					data-testid="wrapper"
+					className={`${styles.wrapper} ${styles[state]}`}
+				>
+					<div data-testid="input" className={`${styles.input} `}>
+						<label
+							data-testid="label"
+							className={`${styles.label}`}
+							htmlFor={name}
+						>
+							{label}
+						</label>
+
+						<input
+							data-testid="inputField"
+							className={`${styles.inputField}`}
+							type={type}
+							name={name}
+							id={name}
+							placeholder={placeholder}
+						/>
+
+						<IconContext.Provider
+							value={{ className: `${styles.icon}` }}
+						>
+							<FaInfoCircle />
+						</IconContext.Provider>
+					</div>
+					<p
+						data-testid="helperText"
+						className={`${styles.helperText}`}
+					>
+						{helperText}
+					</p>
+				</div>
+			</>
+		);
+	}
 }
