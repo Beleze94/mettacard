@@ -3,7 +3,6 @@
 import styles from "./page.module.css";
 import Button from "./components/button";
 import Input from "./components/input";
-import { useState } from "react";
 
 export default function Home() {
 	const state = "default";
