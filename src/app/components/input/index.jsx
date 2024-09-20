@@ -5,20 +5,20 @@ import styles from "./input.module.css";
 import { FaFontAwesome } from "react-icons/fa";
 import { IconContext } from "react-icons";
 
-export default function Input() {
+export default function Input({ state, name, type, placeholder, label }) {
 	return (
 		<>
 			<div className={`${styles.wrapper}`}>
-				<div className={`${styles.input}`}>
+				<div className={`${styles.input} ${styles[state]}`}>
 					<label className={`${styles.label}`} htmlFor="inputMetta">
-						Label
+						{label}
 					</label>
 
 					<input
 						className={`${styles.inputField}`}
-						type="text"
-						name="inputMetta"
-						placeholder="Placeholder"
+						type={type}
+						name={name}
+						placeholder={placeholder}
 					/>
 					<IconContext.Provider
 						value={{ className: `${styles.icon}` }}

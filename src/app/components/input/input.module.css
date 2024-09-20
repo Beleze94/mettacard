@@ -20,7 +20,6 @@
 }
 
 .input {
-	border: solid red 1px;
 	display: flex;
 	align-items: center;
 	align-self: stretch;
@@ -28,6 +27,14 @@
 	height: 3.125rem;
 	padding: 0.5rem;
 	border-radius: 0.25rem;
+}
+
+.default {
+	border: 1px solid var(--neutral);
+}
+
+.default:focus-within {
+	border: solid 1px green;
 }
 
 .input:focus {
