@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import styles from "./input.module.css";
 import { IconContext } from "react-icons";
 import { FaCircleCheck } from "react-icons/fa6";
@@ -13,6 +12,7 @@ export default function Input({
 	placeholder,
 	label,
 	helperText,
+	onType,
 }) {
 	if (state == "success") {
 		return (
@@ -37,6 +37,7 @@ export default function Input({
 							name={name}
 							id={name}
 							placeholder={placeholder}
+							onChange={(e) => onType(e.target.value)}
 						/>
 
 						<IconContext.Provider
@@ -77,6 +78,7 @@ export default function Input({
 							name={name}
 							id={name}
 							placeholder={placeholder}
+							onChange={(e) => onType(e.target.value)}
 						/>
 
 						<IconContext.Provider
