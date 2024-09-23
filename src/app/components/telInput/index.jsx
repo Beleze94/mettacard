@@ -17,7 +17,7 @@ export default function TelInput({
 	};
 
 	function validateTel(tel) {
-		if (tel.length === 10 || tel.length === 11) {
+		if ((tel.length === 10 || tel.length === 11) && !isNaN(tel)) {
 			return true;
 		} else {
 			return false;
@@ -45,10 +45,11 @@ export default function TelInput({
 			<Input
 				state={state}
 				name={name}
-				type="number"
+				type="tel"
 				placeholder={placeholder}
 				label={label}
 				helperText={helperText}
+				maxLength={11}
 				onType={inputHandler}
 			/>
 		</>
