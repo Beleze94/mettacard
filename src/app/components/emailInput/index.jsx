@@ -13,8 +13,7 @@ export default function EmailInput() {
 	};
 
 	function validateEmail(email) {
-		var validRegex =
-			/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+		var validRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 		if (email.match(validRegex)) {
 			return true;
 		} else {
@@ -23,8 +22,17 @@ export default function EmailInput() {
 	}
 
 	useEffect(() => {
+		if (userInputParent.length == 0) {
+			return;
+		}
 		const isEmail = validateEmail(userInputParent);
-		isEmail ? setState("success") : setState("error");
+		if (isEmail) {
+			setState("success");
+			setHelperText("");
+		} else {
+			setState("error");
+			setHelperText("Insira um e-mail válido");
+		}
 	}, [userInputParent]);
 
 	return (

@@ -12,16 +12,26 @@ export default function NameInput() {
 		setUserInputParent(userInput);
 	};
 
+	function validateFullName(name) {
+		var validRegex = /^[a-zA-Z]{3,} [a-zA-Z]{3,}$/;
+		if (name.match(validRegex)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	useEffect(() => {
 		if (userInputParent.length == 0) {
 			return;
 		}
-		if (userInputParent.length > 3) {
+		const isFullName = validateFullName(userInputParent);
+		if (isFullName) {
 			setState("success");
 			setHelperText("");
 		} else {
 			setState("error");
-			setHelperText("Insira seu nome");
+			setHelperText("Insira o nome completo");
 		}
 	}, [userInputParent]);
 
