@@ -16,27 +16,43 @@ export default function NameInput({
 		setUserInputParent(userInput);
 	};
 
-	function validateFullName(name) {
+	function validateName(name) {
 		const nameTrim = name.trim();
-		const validRegex = /^[a-zA-Z]{3,} [a-zA-Z]{3,}$/;
-		if (nameTrim.match(validRegex)) {
-			return true;
-		} else {
-			return false;
+		const validRegex = /[^A-Za-zÀ-ÖØ-öø-ÿ\s]+/;
+		if (nameTrim.length < 3) {
+			return 1;
+		}
+		if (nameTrim.length > 32) {
+			return 2;
+		}
+		if (validRegex.test(nameTrim)) {
+			return 3;
 		}
 	}
 
 	useEffect(() => {
 		if (userInputParent.length == 0) {
+			setState("default");
+			setHelperText("");
 			return;
 		}
-		const isFullName = validateFullName(userInputParent);
-		if (isFullName) {
-			setState("success");
-			setHelperText("");
-		} else {
-			setState("error");
-			setHelperText("Insira o nome completo");
+		switch (validateName(userInputParent)) {
+			case 1:
+				setState("error");
+				setHelperText("Insira o nome completo");
+				break;
+			case 2:
+				setState("error");
+				setHelperText("Por favor, utilize abreviações");
+				break;
+			case 3:
+				setState("error");
+				setHelperText("Não utilize números ou caracteres especiais");
+				break;
+			default:
+				setState("success");
+				setHelperText("");
+				break;
 		}
 	}, [userInputParent]);
 
