@@ -43,7 +43,7 @@ export default function Input({
 						<IconContext.Provider
 							value={{ className: `${styles.icon}` }}
 						>
-							<FaCircleCheck />
+							<FaCircleCheck data-testid="icon" />
 						</IconContext.Provider>
 					</div>
 					<p
@@ -84,7 +84,7 @@ export default function Input({
 						<IconContext.Provider
 							value={{ className: `${styles.icon}` }}
 						>
-							<FaInfoCircle />
+							<FaInfoCircle data-testid="icon" />
 						</IconContext.Provider>
 					</div>
 					<p

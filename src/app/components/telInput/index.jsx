@@ -45,7 +45,7 @@ export default function TelInput({
 			<Input
 				state={state}
 				name={name}
-				type="text"
+				type="number"
 				placeholder={placeholder}
 				label={label}
 				helperText={helperText}
