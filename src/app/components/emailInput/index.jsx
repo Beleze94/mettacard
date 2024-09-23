@@ -3,7 +3,11 @@
 import React, { useEffect, useState } from "react";
 import Input from "../input";
 
-export default function EmailInput() {
+export default function EmailInput({
+	name = "email",
+	placeholder = "Insira seu e-mail",
+	label = "E-mail",
+}) {
 	const [userInputParent, setUserInputParent] = useState("");
 	const [state, setState] = useState("default");
 	const [helperText, setHelperText] = useState("");
@@ -39,10 +43,10 @@ export default function EmailInput() {
 		<>
 			<Input
 				state={state}
-				name="email"
+				name={name}
 				type="email"
-				placeholder="Insira seu e-mail"
-				label="E-Mail"
+				placeholder={placeholder}
+				label={label}
 				helperText={helperText}
 				onType={inputHandler}
 			/>

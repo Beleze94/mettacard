@@ -3,10 +3,10 @@
 import React, { useEffect, useState } from "react";
 import Input from "../input";
 
-export default function NameInput({
-	label = "Nome Completo",
-	placeholder = "Insira seu nome",
-	name = "nome",
+export default function TelInput({
+	label = "Telefone / Celular",
+	placeholder = "(XX) XXXXX-XXXX",
+	name = "telefone",
 }) {
 	const [userInputParent, setUserInputParent] = useState("");
 	const [state, setState] = useState("default");
@@ -16,9 +16,8 @@ export default function NameInput({
 		setUserInputParent(userInput);
 	};
 
-	function validateFullName(name) {
-		var validRegex = /^[a-zA-Z]{3,} [a-zA-Z]{3,}$/;
-		if (name.match(validRegex)) {
+	function validateTel(tel) {
+		if (tel.length === 10 || tel.length === 11) {
 			return true;
 		} else {
 			return false;
@@ -29,13 +28,13 @@ export default function NameInput({
 		if (userInputParent.length == 0) {
 			return;
 		}
-		const isFullName = validateFullName(userInputParent);
-		if (isFullName) {
+		const isTel = validateTel(userInputParent);
+		if (isTel) {
 			setState("success");
 			setHelperText("");
 		} else {
 			setState("error");
-			setHelperText("Insira o nome completo");
+			setHelperText("Insira número válido");
 		}
 	}, [userInputParent]);
 

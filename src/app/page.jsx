@@ -4,6 +4,8 @@ import styles from "./page.module.css";
 import Button from "./components/button";
 import NameInput from "./components/nameInput";
 import EmailInput from "./components/emailInput";
+import CPFInput from "./components/cpfInput";
+import TelInput from "./components/telInput";
 
 export default function Home() {
 	return (
@@ -12,6 +14,8 @@ export default function Home() {
 				<Button novoContato></Button>
 				<NameInput />
 				<EmailInput />
+				<CPFInput />
+				<TelInput />
 				<Button
 					buttonVariant="filledDisable"
 					buttonText="Botão"
