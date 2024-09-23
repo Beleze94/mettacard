@@ -17,8 +17,9 @@ export default function NameInput({
 	};
 
 	function validateFullName(name) {
-		var validRegex = /^[a-zA-Z]{3,} [a-zA-Z]{3,}$/;
-		if (name.match(validRegex)) {
+		const nameTrim = name.trim();
+		const validRegex = /^[a-zA-Z]{3,} [a-zA-Z]{3,}$/;
+		if (nameTrim.match(validRegex)) {
 			return true;
 		} else {
 			return false;
