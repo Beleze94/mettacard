@@ -26,6 +26,8 @@ export default function TelInput({
 
 	useEffect(() => {
 		if (userInputParent.length == 0) {
+			setState("default");
+			setHelperText("");
 			return;
 		}
 		const isTel = validateTel(userInputParent);

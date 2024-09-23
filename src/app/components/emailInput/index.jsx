@@ -27,6 +27,8 @@ export default function EmailInput({
 
 	useEffect(() => {
 		if (userInputParent.length == 0) {
+			setState("default");
+			setHelperText("");
 			return;
 		}
 		const isEmail = validateEmail(userInputParent);

@@ -58,6 +58,8 @@ export default function CPFInput({
 
 	useEffect(() => {
 		if (userInputParent.length == 0) {
+			setState("default");
+			setHelperText("");
 			return;
 		}
 		const isCPF = validateCPF(userInputParent);
