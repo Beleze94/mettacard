@@ -13,7 +13,6 @@ export default function Input({
 	label,
 	helperText,
 	onType,
-	maxLength,
 }) {
 	if (state == "success") {
 		return (
@@ -38,7 +37,6 @@ export default function Input({
 							name={name}
 							id={name}
 							placeholder={placeholder}
-							maxLength={maxLength}
 							onChange={(e) => onType(e.target.value)}
 						/>
 

@@ -49,7 +49,6 @@ export default function TelInput({
 				placeholder={placeholder}
 				label={label}
 				helperText={helperText}
-				maxLength={11}
 				onType={inputHandler}
 			/>
 		</>
