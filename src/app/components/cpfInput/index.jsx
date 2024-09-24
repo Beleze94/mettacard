@@ -77,7 +77,7 @@ export default function CPFInput({
 			<Input
 				state={state}
 				name={name}
-				type="email"
+				type="text"
 				placeholder={placeholder}
 				label={label}
 				helperText={helperText}
